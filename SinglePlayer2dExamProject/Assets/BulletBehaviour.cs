@@ -7,7 +7,7 @@ public class BulletBehaviour : MonoBehaviour {
     public Vector3 startPosition;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Equals("AI")) {
+        if (collision.gameObject.name.Contains("AI")) {
             Destroy(collision.gameObject);
             Destroy(gameObject); //if a bullet hits an ai, the ai and the bullet is destroyed
             

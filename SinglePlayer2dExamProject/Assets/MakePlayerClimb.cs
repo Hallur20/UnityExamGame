@@ -17,12 +17,20 @@ public class MakePlayerClimb : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && Input.GetKey(KeyCode.W))
-        {
-            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
 
-        } else if (collision.tag == "Player" && Input.GetKey(KeyCode.S)) {
-            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speed);
+        if (gameObject.name.Contains("Ladder")) {
+
+            if (collision.tag == "Player" && Input.GetKey(KeyCode.W))
+            {
+                collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
+
+            } else if (collision.tag == "Player" && Input.GetKey(KeyCode.S)) {
+                collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speed);
+            }
+        } 
+
+        if (gameObject.name.Contains("Waterfall")) {
+            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
         }
     }
 }

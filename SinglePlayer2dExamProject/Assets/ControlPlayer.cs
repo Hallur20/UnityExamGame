@@ -31,7 +31,7 @@ public class ControlPlayer : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Equals("Lava") || collision.gameObject.name.Equals("Ice")) {
+        if (collision.gameObject.name.Contains("Lava") || collision.gameObject.name.Equals("Ice")) {
             Destroy(gameObject);
         }
 
