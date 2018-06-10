@@ -233,7 +233,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -314,6 +314,10 @@ MonoBehaviour:
   pickupSound: {fileID: 0}
   backgroundMusic: {fileID: 0}
   deadSound: {fileID: 0}
+  distance: 0
+  whatIsLadder:
+    serializedVersion: 2
+    m_Bits: 0
   offset: {x: 0.4, y: 0.1}
   cooldown: 5
 --- !u!212 &212473924633971998

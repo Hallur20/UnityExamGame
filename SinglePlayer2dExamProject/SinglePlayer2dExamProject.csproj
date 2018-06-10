@@ -295,6 +295,7 @@
     <Compile Include="Assets\AutoShootScript.cs" />
     <Compile Include="Assets\Black Knight\AnimationEvent.cs" />
     <Compile Include="Assets\Black Knight\demo\UnitControl.cs" />
+    <Compile Include="Assets\BossBehaviour.cs" />
     <Compile Include="Assets\BulletBehaviour.cs" />
     <Compile Include="Assets\CameraFollowPlayer.cs" />
     <Compile Include="Assets\ControlPlayer.cs" />
@@ -316,6 +317,7 @@
     <Compile Include="Assets\WinButtonBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\BigHeads\BigHead Starter\Shader\Outlined Diffuse.shader" />
     <None Include="Assets\Black Knight\ReadMe.txt" />
     <None Include="Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>

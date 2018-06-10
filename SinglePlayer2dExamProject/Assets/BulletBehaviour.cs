@@ -7,7 +7,7 @@ public class BulletBehaviour : MonoBehaviour {
     public Vector3 startPosition;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("AI")) {
+        if (collision.gameObject.name.Contains("AI") && gameObject.name == "CharacterRobotBoy") {
             Destroy(collision.gameObject);
             Destroy(gameObject); //if a bullet hits an ai, the ai and the bullet is destroyed
             
@@ -21,7 +21,13 @@ public class BulletBehaviour : MonoBehaviour {
             StartCoroutine(GoThroughPickup(collision));
 
         }
-
+        if (collision.gameObject.name.Contains("Stop")) {
+            gameObject.SetActive(false);
+            gameObject.name = "EnemyBullet";
+        }
+        if (gameObject.gameObject.name.Contains("EnemyBullet") && collision.gameObject.name.Contains("CharacterRobotBoy")) {
+            Destroy(collision.gameObject);
+        }
     }
 
     // Use this for initialization
@@ -36,8 +42,16 @@ public class BulletBehaviour : MonoBehaviour {
 	}
 
     IEnumerator DestroyBulletAfter2Seconds() {
-        yield return new WaitForSeconds(2);
-        Destroy(gameObject);
+        if (gameObject.name.Contains("CharacterRobotBoy") || gameObject.name.Contains("canon")) {
+            yield return new WaitForSeconds(2);
+            Destroy(gameObject);
+        } else
+        {
+            yield return new WaitForSeconds(2);
+            gameObject.SetActive(false);
+            gameObject.name = "InActiveBullet";
+        }
+        
     }
     IEnumerator GoThroughPickup(Collision2D collision) {
         collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
