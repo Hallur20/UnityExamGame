@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BulletBehaviour : MonoBehaviour {
     public Vector2 velocity;
     public Vector3 startPosition;
+    public Slider healthBar;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("AI") && gameObject.name == "CharacterRobotBoy") {
-            Destroy(collision.gameObject);
+        if (collision.gameObject.name.Contains("AI") ) {
             Destroy(gameObject); //if a bullet hits an ai, the ai and the bullet is destroyed
+            Destroy(collision.gameObject);
             
+        }
+        if (collision.gameObject.name.Equals("BOSS") && bossCooldown == false) {
+            Debug.Log("are we printing 10 times?");
+            StartCoroutine(makeBossGetHitOnlyOnceByBullet());
+            Destroy(gameObject);
+            BossBehaviour.lifes -= 1;
+            GameObject.Find("New Text").GetComponent<TextMesh>().text = "hits left: " + BossBehaviour.lifes;
         }
         if (collision.gameObject.name.Contains("Platform"))
         {
@@ -25,9 +34,21 @@ public class BulletBehaviour : MonoBehaviour {
             gameObject.SetActive(false);
             gameObject.name = "EnemyBullet";
         }
-        if (gameObject.gameObject.name.Contains("EnemyBullet") && collision.gameObject.name.Contains("CharacterRobotBoy")) {
-            Destroy(collision.gameObject);
+        if (gameObject.name.Contains("EnemyBullet") && collision.gameObject.name.Contains("CharacterRobotBoy")) {
+            if (GameObject.Find("HealthBar").GetComponent<Slider>().value != 0) {
+                GameObject.Find("HealthBar").GetComponent<Slider>().value -= 0.5F;
+            } else
+            {
+                Destroy(collision.gameObject);
+            }
+            
         }
+    }
+    private bool bossCooldown = false;
+    IEnumerator makeBossGetHitOnlyOnceByBullet() {
+        bossCooldown = true;
+        yield return new WaitForSeconds(1F);
+        bossCooldown = false;
     }
 
     // Use this for initialization

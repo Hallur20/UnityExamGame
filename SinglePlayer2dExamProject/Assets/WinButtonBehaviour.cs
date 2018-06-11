@@ -16,6 +16,11 @@ public class WinButtonBehaviour : MonoBehaviour {
 		
 	}
     private void GoToNextLevel() {
-        SceneManager.LoadScene("_scene2");
+        if (SceneManager.GetActiveScene().name.Equals("_scene")) {
+            SceneManager.LoadScene("_scene2");
+        }
+        if (SceneManager.GetActiveScene().name.Equals("_scene2")) {
+            SceneManager.LoadScene("_scene3");
+        }       
     }
 }

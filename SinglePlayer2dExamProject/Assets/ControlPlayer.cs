@@ -48,10 +48,11 @@ public class ControlPlayer : MonoBehaviour {
         }
     }
 
-
+    int pointCount;
 
     // Use this for initialization
     void Start () {
+        pointCount = GameObject.FindGameObjectsWithTag("Pick Up").Length;
         Time.timeScale = 1;
         Debug.Log(lifes);
         backgroundMusic.Play();
@@ -65,7 +66,8 @@ public class ControlPlayer : MonoBehaviour {
     private void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 2) {
+        if (count >= pointCount) {
+            Debug.Log("count is now: " + count);
             winText.text = "You win!";
             Time.timeScale = 0;
             GameObject.Find("AI").SetActive(false);

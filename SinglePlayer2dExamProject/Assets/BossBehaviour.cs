@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossBehaviour : MonoBehaviour {
 
     bool whichWay = true;
+    public GameObject point;
     public float speedMove;
     public GameObject bullet;
     private bool canShoot = true;
     public Vector2 velocity;
     public Vector2 offset = new Vector2(-0.4F, -0.1F);
     GameObject saveGo;
+    public Slider healthBar;
+    private bool invulnerable = false;
+    public static int lifes;
+    public GameObject lifesText;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -31,13 +38,30 @@ public class BossBehaviour : MonoBehaviour {
         }
         if (collision.gameObject.name.Equals("CharacterRobotBoy"))
         {
-
-            Destroy(collision.gameObject);
+            if (invulnerable != true)
+            {
+                if (healthBar.value != 0)
+                {
+                    healthBar.value -= 0.5F;
+                    StartCoroutine(playerIsInvulnerableForFewSeconds());
+                }
+                else
+                {
+                    Destroy(collision.gameObject);
+                }
+            }
         }
+    }
+    IEnumerator playerIsInvulnerableForFewSeconds()
+    {
+        invulnerable = true;
+        yield return new WaitForSeconds(1.5F);
+        invulnerable = false;
     }
 
     // Use this for initialization
     void Start () {
+        lifes = 8;
         offset = new Vector2(0.10F, 0.05F);
         StartCoroutine(whenToJump());
     }
@@ -47,6 +71,9 @@ public class BossBehaviour : MonoBehaviour {
         if (whichWay == true)
         {
             gameObject.transform.Translate(new Vector3(speedMove, 0, 0));
+        }
+        if (lifes == 0) {
+            Destroy(gameObject);
         }
         if (whichWay == false)
         {
@@ -109,5 +136,10 @@ public class BossBehaviour : MonoBehaviour {
         canShoot = false;
         yield return new WaitForSeconds(1.5F);
         canShoot = true;
+    }
+
+    private void OnDestroy()
+    {
+        point.SetActive(true);
     }
 }
