@@ -34,9 +34,11 @@ public class BulletBehaviour : MonoBehaviour {
             gameObject.SetActive(false);
             gameObject.name = "EnemyBullet";
         }
+
         if (gameObject.name.Contains("EnemyBullet") && collision.gameObject.name.Contains("CharacterRobotBoy")) {
             if (GameObject.Find("HealthBar").GetComponent<Slider>().value != 0) {
                 GameObject.Find("HealthBar").GetComponent<Slider>().value -= 0.5F;
+                gameObject.SetActive(false);
             } else
             {
                 Destroy(collision.gameObject);

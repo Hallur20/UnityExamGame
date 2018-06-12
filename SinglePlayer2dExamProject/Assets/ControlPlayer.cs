@@ -53,6 +53,7 @@ public class ControlPlayer : MonoBehaviour {
     // Use this for initialization
     void Start () {
         pointCount = GameObject.FindGameObjectsWithTag("Pick Up").Length;
+        Debug.Log("how many points: " + pointCount);
         Time.timeScale = 1;
         Debug.Log(lifes);
         backgroundMusic.Play();
@@ -68,10 +69,17 @@ public class ControlPlayer : MonoBehaviour {
         countText.text = "Count: " + count.ToString();
         if (count >= pointCount) {
             Debug.Log("count is now: " + count);
-            winText.text = "You win!";
-            Time.timeScale = 0;
-            GameObject.Find("AI").SetActive(false);
-            youWonButton.gameObject.SetActive(true);
+            if (SceneManager.GetActiveScene().name.Equals("_scene3")) {
+                winText.text = "Game Complete!";
+                Time.timeScale = 0;
+            } else
+            {
+                winText.text = "You win!";
+                Time.timeScale = 0;
+                GameObject.Find("AI").SetActive(false);
+                youWonButton.gameObject.SetActive(true);
+            }
+
         }
     }
 

@@ -20,19 +20,21 @@ public class BossBehaviour : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Equals("StopRight") && whichWay == true)
+        if (collision.gameObject.name.Contains("StopRight") && whichWay == true)
         {
             offset = new Vector2(-0.05F, 0.05F);
             Debug.Log("going left");
             gameObject.transform.Rotate(new Vector3(0, 180, 0));
+            GameObject.Find("New Text").transform.Rotate(new Vector3(0,-180,0));
             whichWay = false;
 
         }
-        if (collision.gameObject.name.Equals("StopLeft") && whichWay == false)
+        if (collision.gameObject.name.Contains("StopLeft") && whichWay == false)
         {
             offset = new Vector2(0.10F, 0.05F);
             Debug.Log("going right");
             gameObject.transform.Rotate(new Vector3(0, -180, 0));
+            GameObject.Find("New Text").transform.Rotate(new Vector3(0, 180, 0));
             whichWay = true;
 
         }
@@ -112,13 +114,13 @@ public class BossBehaviour : MonoBehaviour {
                 saveGo.SetActive(true);
                 saveGo.transform.position =(gameObject.transform.position);
                 saveGo.transform.position += new Vector3(6.5F, 3.5F, 0);
-                saveGo.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x + 40, velocity.y);
+                saveGo.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x+40, velocity.y);
                 StartCoroutine(ShootingCooldown());
             }
         }
         
 
-
+            
     }
 
     IEnumerator whenToJump() {
@@ -140,6 +142,6 @@ public class BossBehaviour : MonoBehaviour {
 
     private void OnDestroy()
     {
-        point.SetActive(true);
+        GameObject.Find("StopRightBoss").SetActive(false);
     }
 }

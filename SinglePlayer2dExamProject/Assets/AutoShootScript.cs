@@ -17,6 +17,7 @@ public class AutoShootScript : MonoBehaviour {
         if (canShoot)
         {
             GameObject go = (GameObject)Instantiate(projectile, (Vector2)transform.position + offset * transform.localScale.x, Quaternion.identity);
+            go.name = "EnemyBullet";
             go.GetComponent<Rigidbody2D>().velocity = new Vector2(-velocity.x, velocity.y);
             StartCoroutine(ShootingCooldown());
         }
