@@ -285,43 +285,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\2D\Scripts\Camera2DFollow.cs" />
-    <Compile Include="Assets\2D\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\2D\Scripts\Platformer2DUserControl.cs" />
-    <Compile Include="Assets\2D\Scripts\PlatformerCharacter2D.cs" />
-    <Compile Include="Assets\2D\Scripts\Restarter.cs" />
-    <Compile Include="Assets\AiMovement.cs" />
-    <Compile Include="Assets\AutoJump.cs" />
-    <Compile Include="Assets\AutoShootScript.cs" />
-    <Compile Include="Assets\Black Knight\AnimationEvent.cs" />
-    <Compile Include="Assets\Black Knight\demo\UnitControl.cs" />
-    <Compile Include="Assets\BossBehaviour.cs" />
-    <Compile Include="Assets\BulletBehaviour.cs" />
-    <Compile Include="Assets\CameraFollowPlayer.cs" />
-    <Compile Include="Assets\ControlPlayer.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\Joystick.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
-    <Compile Include="Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
-    <Compile Include="Assets\FlyUpAndDownAI.cs" />
-    <Compile Include="Assets\MakePlayerClimb.cs" />
-    <Compile Include="Assets\RestartButtonBehaviour.cs" />
-    <Compile Include="Assets\Rotate.cs" />
-    <Compile Include="Assets\SlideBar.cs" />
-    <Compile Include="Assets\UiBehaviour.cs" />
-    <Compile Include="Assets\WinButtonBehaviour.cs" />
+    <Compile Include="Assets\AssetStore\2D\Scripts\Camera2DFollow.cs" />
+    <Compile Include="Assets\AssetStore\2D\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\AssetStore\2D\Scripts\Platformer2DUserControl.cs" />
+    <Compile Include="Assets\AssetStore\2D\Scripts\PlatformerCharacter2D.cs" />
+    <Compile Include="Assets\AssetStore\2D\Scripts\Restarter.cs" />
+    <Compile Include="Assets\AssetStore\Black Knight\AnimationEvent.cs" />
+    <Compile Include="Assets\AssetStore\Black Knight\demo\UnitControl.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\TouchPad.cs" />
+    <Compile Include="Assets\AssetStore\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\Scripts\AiMovement.cs" />
+    <Compile Include="Assets\Scripts\AutoJump.cs" />
+    <Compile Include="Assets\Scripts\AutoShootScript.cs" />
+    <Compile Include="Assets\Scripts\BossBehaviour.cs" />
+    <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CameraFollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\ControlPlayer.cs" />
+    <Compile Include="Assets\Scripts\FlyUpAndDownAI.cs" />
+    <Compile Include="Assets\Scripts\MakePlayerClimb.cs" />
+    <Compile Include="Assets\Scripts\RestartButtonBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Rotate.cs" />
+    <Compile Include="Assets\Scripts\WinButtonBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\BigHeads\BigHead Starter\Shader\Outlined Diffuse.shader" />
-    <None Include="Assets\Black Knight\ReadMe.txt" />
-    <None Include="Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\AssetStore\BigHeads\BigHead Starter\Shader\Outlined Diffuse.shader" />
+    <None Include="Assets\AssetStore\Black Knight\ReadMe.txt" />
+    <None Include="Assets\AssetStore\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
