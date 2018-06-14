@@ -16,7 +16,6 @@ public class AiMovement : MonoBehaviour {
         //when the ai (this could be the skeletonman or the boss) touches a gameobject with the name StopRight,
         //set whichway to be false and turn the ai 180 degrees (to the left)
         if (collision.gameObject.name.Equals("StopRight") && whichWay == true) {
-            Debug.Log("going left");
             gameObject.transform.Rotate(new Vector3(0, 180, 0));
             whichWay = false;
 
@@ -25,7 +24,6 @@ public class AiMovement : MonoBehaviour {
         //set whichway to be true and turn the ai -180 degrees (to the right)
         if (collision.gameObject.name.Equals("StopLeft") && whichWay == false)
         {
-            Debug.Log("going right");
             gameObject.transform.Rotate(new Vector3(0, -180, 0));
             whichWay = true;
 

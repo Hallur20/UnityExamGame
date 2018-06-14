@@ -12,12 +12,10 @@ public class BulletBehaviour : MonoBehaviour {
         if (collision.gameObject.name.Contains("AI") ) {
             Destroy(gameObject); //if a bullet hits an ai, the ai and the bullet is destroyed
             Destroy(collision.gameObject);
-            
         }
         //if the robot-boy-bullet hits the boss, make the boss unable to take damage for 1.5seconds (this is so the bullet doesnt kill him instantly because of how oncollision works)
         //also make the boss lose 1 life and update the text that shows that.
         if (collision.gameObject.name.Equals("BOSS") && bossCooldown == false) {
-            Debug.Log("are we printing 10 times?");
             StartCoroutine(makeBossGetHitOnlyOnceByBullet());
             Destroy(gameObject);
             BossBehaviour.lifes -= 1;

@@ -28,7 +28,6 @@ public class BossBehaviour : MonoBehaviour {
             gameObject.transform.Rotate(new Vector3(0, 180, 0));
             GameObject.Find("New Text").transform.Rotate(new Vector3(0,-180,0)); //revert text (how many hits are left to kill boss) again, because then the player can see what is being said.
             whichWay = false;
-
         }
         //if boss touches gameobject named stopleft, set whichway to true, also rotate him -180 degrees (to the right)
         if (collision.gameObject.name.Contains("StopLeft") && whichWay == false)
