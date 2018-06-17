@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class MakePlayerClimb : MonoBehaviour {
     public float speed = 5;
-    private Animator m_Anim;
+ 
     // Use this for initialization
-    void Start () {
-        m_Anim = GameObject.Find("CharacterRobotBoy").GetComponent<Animator>();
-    }
+ 
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	
 
     private void OnTriggerStay2D(Collider2D collision)
     {

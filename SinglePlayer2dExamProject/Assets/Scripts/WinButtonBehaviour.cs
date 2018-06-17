@@ -13,11 +13,7 @@ public class WinButtonBehaviour : MonoBehaviour
         button.onClick.AddListener(GoToNextLevel);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     private void GoToNextLevel()
     {
         if (SceneManager.GetActiveScene().name.Equals("_scene"))

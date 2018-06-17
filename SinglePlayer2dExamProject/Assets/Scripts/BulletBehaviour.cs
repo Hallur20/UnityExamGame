@@ -7,6 +7,7 @@ public class BulletBehaviour : MonoBehaviour {
     public Vector2 velocity;
     public Vector3 startPosition;
     public Slider healthBar;
+    private bool bossCooldown = false;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Contains("AI") ) {
@@ -49,7 +50,7 @@ public class BulletBehaviour : MonoBehaviour {
             
         }
     }
-    private bool bossCooldown = false;
+  
     //this method makes boss invulnerable for 1 seconds, so that no bugs appear when he gets shot (for example he gets shot 3 times by 1 bullet)
     IEnumerator makeBossGetHitOnlyOnceByBullet() {
         bossCooldown = true; //when bosscooldown is true, he cannot be shot.

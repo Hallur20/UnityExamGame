@@ -7830,6 +7830,11 @@ Prefab:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114227863731795074, guid: 15a7a204fa2709042bed8004d0cafcdb,
+        type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 902072417}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15a7a204fa2709042bed8004d0cafcdb, type: 2}
   m_IsPrefabParent: 0
@@ -9656,6 +9661,11 @@ Prefab:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114227863731795074, guid: 15a7a204fa2709042bed8004d0cafcdb,
+        type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 902072417}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15a7a204fa2709042bed8004d0cafcdb, type: 2}
   m_IsPrefabParent: 0
